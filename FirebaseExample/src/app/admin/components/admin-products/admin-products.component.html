@@ -1,0 +1,28 @@
+<p>
+    <a [routerLink]="['/admin/products/new']" class="btn btn-primary">New Product</a>
+</p>
+<input #query
+    (keyup)="filter(query.value)" type="text"
+    class="form-control" placeholder="Search...">
+<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover table-product">
+<thead>
+  <tr>
+    <td></td>
+    <th>Title</th>
+    <th>Price</th>
+    <th>Image</th>
+    <td></td>
+  </tr>
+</thead>
+<tbody>
+  <tr *ngFor="let p of filteredProducts; let i = index">
+    <td>{{ i+1 }}</td>
+    <td>{{ p.title }}</td>
+    <td>{{ p.price }}</td>
+    <td><img [src]="p.imageUrl" class="card-img-top product__image" *ngIf="p.imageUrl"></td>
+    <td>
+        <a [routerLink]="['/admin/products/',p.key]">Edit</a>
+    </td>
+</tr>
+</tbody>
+</table>

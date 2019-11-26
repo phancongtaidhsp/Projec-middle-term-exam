@@ -1,0 +1,23 @@
+.card-footer{
+    padding: 0;
+}
+.card{
+    margin-bottom: 30px;
+    width: 20em;
+}
+.card-product{
+    height: 100%;
+}
+.card-body{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+.image-product{
+    align-self: flex-start;
+    margin-bottom: auto;
+}
+.card-footer button{
+    cursor: pointer;
+}
